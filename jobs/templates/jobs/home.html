@@ -19,15 +19,15 @@
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Muctarr Rahim</a>
+      <a class="navbar-brand" href="{% url 'home'%}">Muctarr Rahim</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Twitter</a>
-          <a class="nav-item nav-link" href="#">Resume</a>
-          <a class="nav-item nav-link" href="#">Blog</a>
+          <a class="nav-item nav-link" href="https://twitter.com/MuctarrRahim">Twitter</a>
+          <a class="nav-item nav-link" href="{% static 'resume.pdf' %}">Resume</a>
+          <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
         </div>
       </div>
     </nav>
@@ -38,48 +38,53 @@
     <section class="jumbotron text-center">
       <div class="container">
         <h1 class="jumbotron-heading">Hi, I'm Rahim.</h1>
-        <p class="lead text-muted">Hey, my name is Muctarr Rahim and I love to make Django websites. It's the thrill of handling the requests that the people want!</p>
-        <p>
-          <a href="mailto:m9rahim@gmail.com" class="btn btn-primary my-2">Email Me</a>
-        </p>
-        <!--<img src="{% static 'nick.jpg' %}" height="300" />-->
-      </div>
-    </section>
+        <p class="lead text-muted">Hey, my name is Muctarr Rahim
+          A successful IT Administrator with extensive analytical and software experience of investigating and diagnosing network
+          problem and also knowledge of IT operating systems, especially Windows, Linux, Cisco and web development. Multi-talented with good
+          allround technical skills and the ability to develop and maintain close working relationships with other support and
+          development teams. Having the personal drive required to deliver a service that exceeds the expectations of colleagues and
+          end users through a positive, well organised and structured work ethic. </p>
+          <p>
+            <a href="mailto:m9rahim@gmail.com" class="btn btn-primary my-2">Email Me</a>
+          </p>
+          <img src="{% static 'muki.jpg' %}" height="300" />
+        </div>
+      </section>
 
-    <div class="album py-5 bg-light">
-      <div class="container">
+      <div class="album py-5 bg-light">
+        <div class="container">
 
-        <div class="row">
+          <div class="row">
 
-          {% for job in jobs.all %}
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img class="card-img-top" src="{{ job.image.url }}" />
-              <div class="card-body">
-                <p class="card-text">{{ job.summary }}</p>
+            {% for job in jobs.all %}
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{ job.image.url }}" />
+                <div class="card-body">
+                  <p class="card-text">{{ job.summary }}</p>
+                </div>
               </div>
             </div>
+            {% endfor %}
+
+
           </div>
-          {% endfor %}
-
-
         </div>
       </div>
-    </div>
 
-  </main>
+    </main>
 
-  <footer class="text-muted">
-    <div class="container text-center">
-      <p>© Muctarr Rahim {% now "Y" %}</p>
+    <footer class="text-muted">
+      <div class="container text-center">
+        <p>© Muctarr Rahim {% now "Y" %}</p>
       </div>
-  </footer>
+    </footer>
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
-</html>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  </html>
